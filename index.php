@@ -1,3 +1,3 @@
 <?php
-    include (start.php);
+    include 'start.php';
 ?>
