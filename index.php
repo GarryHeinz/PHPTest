@@ -7,7 +7,7 @@
         function start($str){
             if(!$isOpen){   
                 echo "<html>";
-                $isOpen = true;
+                $isOpen = 0;
             }
             echo $str;
         }
@@ -15,7 +15,7 @@
         function end(){
             if($isOpen){
                 echo "</html>";
-                $isOpen = false;
+                $isOpen = 1;
             }
         }
    }
