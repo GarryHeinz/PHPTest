@@ -2,10 +2,10 @@
    
    class MyFirstClass{
 
-        $isOpen = false;
+        var $isOpen = false;
 
         function start($str){
-            if(!$isOpen){
+            if(!$isOpen){   
                 echo "<html>";
                 $isOpen = true;
             }
