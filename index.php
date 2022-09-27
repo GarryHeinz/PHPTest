@@ -5,7 +5,7 @@
         $isOpen = false;
 
         function start($str){
-            if(!$isOpen)
+            if(!$isOpen){
                 echo "<html>";
                 $isOpen = true;
             }
