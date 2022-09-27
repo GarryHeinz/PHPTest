@@ -9,13 +9,14 @@
                 echo "<html>";
                 $this->isOpen = true;
             }
-            echo $str;
+            echo "$str <br>";
+            echo "<br>";
         }
 
         function end(){
             if($this->isOpen){
                 echo "</html>";
-                $this->isOpen = false;
+                $this->isOpen = false   ;
             }
         }
    }
