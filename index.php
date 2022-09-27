@@ -21,10 +21,10 @@
    }
 
    $class = new MyFirstClass();
-   $class.start("hallo");
-   $class.start("Hallo 1");
-   $class.start("Moingorno");
-   $class.end();
+   $class->start("hallo");
+   $class->start("Hallo 1");
+   $class->start("Moingorno");
+   $class->end();
 ?>  
 <html>
     <h1>Überschrift</h1>
