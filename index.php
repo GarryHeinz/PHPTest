@@ -5,17 +5,17 @@
         var $isOpen = false;
 
         function start($str){
-            if(!$isOpen){   
+            if(!$this->isOpen){   
                 echo "<html>";
-                $isOpen = 0;
+                $this->isOpen = true;
             }
             echo $str;
         }
 
         function end(){
-            if($isOpen){
+            if($this->isOpen){
                 echo "</html>";
-                $isOpen = 1;
+                $this->isOpen = false;
             }
         }
    }
