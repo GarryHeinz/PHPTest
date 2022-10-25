@@ -4,13 +4,14 @@
 
         public static function createLinkList(){
              if(LinkList::$cwd == null){
-                //$path = explode("/",getcwd());
+                $p = explode("/",$_SERVER["PHP_SELF"]);
                 //LinkList::$cwd = "/" . $path[count($path)-1] . "/";  
                 echo $_SERVER["PHP_SELF"];
                 echo "\n";
-                echo count(explode("/",$_SERVER["PHP_SELF"]));
+                echo count($p);
                 echo "\n";
-                LinkList::$cwd = "/" . explode("/",$_SERVER["PHP_SELF"])[1]; 
+                $current = $p[1];
+                LinkList::$cwd = "/" . $current; 
             }
             echo LinkList::$cwd;
             LinkList::getLinks(LinkList::$cwd);
