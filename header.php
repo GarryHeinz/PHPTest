@@ -3,11 +3,8 @@
         public static $cwd = null;
         public static function createLinkList(){
              if(LinkList::$cwd == null){
-                LinkList::$cwd = getcwd();
-                $uri = $_SERVER["REQUEST_URI"];
-                while(LinkList::$cwd != $uri){
-                    LinkList::$cwd = substr(LinkList::$cwd,1);
-                }
+                $path = explode("/",getcwd());
+                LinkList::$cwd = $path[count($path)-1];   
             }
             echo LinkList::$cwd;
             LinkList::getLinks(LinkList::$cwd);
