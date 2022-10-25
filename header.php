@@ -7,12 +7,16 @@
             $sub = explode(".",$item);
             if($sub[count($sub)-1] == "php"){
                 echo "<li>";
-                echo "<a href='$item'>$sub[0]</a>";
+                $path = explode("/",$_SERVER["REQUEST_URI"];
+                if($path[count($path)-1] == $item){
+                    echo $sub
+                }else{
+                    echo "<a href='$item'>$sub[0]</a>";
+                }
                 echo "</li>";
             }
         }
         echo "</ol>";
-        var_dump($_SERVER);
     }
     createLinkList();
     
