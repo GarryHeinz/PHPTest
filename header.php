@@ -6,7 +6,7 @@
              if(LinkList::$cwd == null){
                 //$path = explode("/",getcwd());
                 //LinkList::$cwd = "/" . $path[count($path)-1] . "/";  
-                LinkList::$cwd = getcwd(); 
+                LinkList::$cwd = "/" . explode("/",$_SERVER["PHP_SELF"])[0]; 
             }
             echo LinkList::$cwd;
             LinkList::getLinks(".");
@@ -16,15 +16,6 @@
             $dir = scandir($path);
     
             echo "<ol>";
-            echo LinkList::$cwd;
-            echo "\n";
-            echo getcwd();
-            echo "\n";
-            if(strlen(LinkList::$cwd) < strlen(getcwd())){
-                    echo "<li>";
-                    echo "<a href='/..'>..</a>";
-                    echo "</li>";
-            }
             foreach($dir as $item){
                 $sub = explode(".",$item);
                 if(is_dir($item) && substr($item,0,1) != "."){
