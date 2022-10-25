@@ -5,7 +5,7 @@
         echo "<ol>";
         foreach($dir as $item){
             $sub = explode(".",$item);
-            if(is_dir($item)){
+            if(is_dir($item) && $item != "."){
                 echo "<li>";
                 echo $item;
                 createLinkList($item);
