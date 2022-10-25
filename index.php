@@ -12,7 +12,8 @@
         }
         echo "</ol>";
     }
- 
+    
+    createLinkList();
     
 
 ?>
