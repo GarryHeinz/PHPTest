@@ -17,6 +17,7 @@
             }
         }
         echo "</ol>";
+        var_dump($_SERVER)
     }
     createLinkList();
     
