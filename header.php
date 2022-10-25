@@ -8,8 +8,7 @@
             if($sub[count($sub)-1] == "php"){
                 echo "<li>";
                 if(is_dir($item) && substr($item,0,1) != "."){
-                    echo $item;
-                    createLinkList($item);
+                    echo "Directory $item";
                 }else{
                     $uri = explode("/",$_SERVER["REQUEST_URI"]);
                     if($uri[count($uri)-1] == $item){
@@ -17,6 +16,7 @@
                     }else{
                         echo "<a href='$item'>$sub[0]</a>";
                     }
+
                 }
                 echo "</li>";
             }
