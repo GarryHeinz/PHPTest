@@ -9,6 +9,7 @@
                     LinkList::$cwd = substr(LinkList::$cwd,1);
                 }
             }
+            echo LinkList::$cwd;
             LinkList::getLinks(LinkList::$cwd);
         }
 
