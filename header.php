@@ -16,7 +16,7 @@
                 if($uri[count($uri)-1] == $item){
                     echo $sub[0];
                 }else{
-                    echo "<a href='$item'>$sub[0]</a>";
+                    echo "<a href='$path/$item'>$sub[0]</a>";
                 }
                 echo "</li>";
             }
