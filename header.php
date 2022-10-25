@@ -6,6 +6,7 @@
              if(LinkList::$cwd == null){
                 //$path = explode("/",getcwd());
                 //LinkList::$cwd = "/" . $path[count($path)-1] . "/";  
+                echo $_SERVER["PHP_SELF"];
                 LinkList::$cwd = "/" . explode("/",$_SERVER["PHP_SELF"])[1]; 
             }
             echo LinkList::$cwd;
