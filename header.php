@@ -9,7 +9,7 @@
                 LinkList::$cwd = getcwd(); 
             }
             echo LinkList::$cwd;
-            LinkList::getLinks(LinkList::$cwd);
+            LinkList::getLinks(".");
         }
 
         private static function getLinks($path){
