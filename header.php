@@ -5,9 +5,10 @@
         public static function createLinkList(){
              if(LinkList::$cwd == null){
                 $p = explode("/",$_SERVER["PHP_SELF"]);
-                //LinkList::$cwd = "/" . $path[count($path)-1] . "/";  
-                var_dump($p);
-
+                //LinkList::$cwd = "/" . $path[count($path)-1] . "/";
+                if(!isset($p[1])){
+                    $p[1] = null;
+                }
                 $current = $p[1];
                 LinkList::$cwd = "/" . $current; 
             }
