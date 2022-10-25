@@ -16,9 +16,10 @@
             $dir = scandir($path);
     
             echo "<ol>";
-            if(strlen(LinkList::$cwd) <strlen(getcwd())){
-                echo "<li>";
-                     echo "<a href='..'>..</a>";
+
+            if(strlen(LinkList::$cwd) < strlen(getcwd())){
+                    echo "<li>";
+                    echo "<a href='/..'>..</a>";
                     echo "</li>";
             }
             foreach($dir as $item){
