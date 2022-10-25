@@ -2,7 +2,14 @@
     class LinkList{
         public static $cwd = null;
         public static function createLinkList(){
-            $dir = scandir(LinkList::$cwd);
+             if(LinkList::$cwd == null){
+                LinkList::$cwd = getcwd();
+            }
+            getLinks(LinkList::$cwd);
+        }
+
+        private function getLinks($path){
+            $dir = scandir($path);
     
             echo "<ol>";
             foreach($dir as $item){
@@ -10,7 +17,7 @@
                 if(is_dir($item) && substr($item,0,1) != "."){
                     echo "<li>";
                     echo $item;
-                    createLinkList($item);
+                    getLinks($item);
                     echo "</li>";
                 }else if($sub[count($sub)-1] == "php"){
                     echo "<li>";
@@ -27,8 +34,6 @@
         }
 
     }
-    if(LinkList::$cwd == null){
-        LinkList::$cwd = getcwd();
-    }
+   
     LinkList::createLinkList();
 ?>
