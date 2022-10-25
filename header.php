@@ -8,6 +8,7 @@
             if($sub[count($sub)-1] == "php"){
                 echo "<li>";
                 if(is_dir($item) && substr($item,0,1) != "."){
+                    echo $sub;
                     createLinkList($item);
                 }else{
                     $uri = explode("/",$_SERVER["REQUEST_URI"]);
