@@ -36,4 +36,5 @@
     }
    
     LinkList::createLinkList();
+    var_dump($_SERVER)    
 ?>
