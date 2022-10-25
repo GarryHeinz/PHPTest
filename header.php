@@ -6,7 +6,7 @@
              if(LinkList::$cwd == null){
                 //$path = explode("/",getcwd());
                 //LinkList::$cwd = "/" . $path[count($path)-1] . "/";  
-                LinkList::$cwd = "."; 
+                LinkList::$cwd = getcwd(); 
             }
             echo LinkList::$cwd;
             LinkList::getLinks(LinkList::$cwd);
@@ -16,6 +16,11 @@
             $dir = scandir($path);
     
             echo "<ol>";
+            if(strlen(LinkList::$cwd) <strlen(getcwd())){
+                echo "<li>";
+                     echo "<a href='..'>..</a>";
+                    echo "</li>";
+            }
             foreach($dir as $item){
                 $sub = explode(".",$item);
                 if(is_dir($item) && substr($item,0,1) != "."){
