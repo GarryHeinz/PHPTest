@@ -7,7 +7,7 @@
                 $p = explode("/",$_SERVER["PHP_SELF"]);
                 //LinkList::$cwd = "/" . $path[count($path)-1] . "/";
                 if(!isset($p[1])){
-                    $p[1] = null;
+                    $p[1] = "PHPTest";
                 }
                 $current = $p[1];
                 LinkList::$cwd = "/" . $current; 
