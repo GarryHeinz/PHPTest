@@ -4,7 +4,7 @@
 
         echo "<ol>";
         foreach($dir as $item){
-            if(is_dir($item)){
+            if(is_dir($item) && substr($item,0,1) != "."){
                 echo "Directory $item";
             }
             $sub = explode(".",$item);
