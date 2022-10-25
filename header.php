@@ -2,7 +2,7 @@
     class LinkList{
         public static $cwd = null;
         public static function createLinkList(){
-            $dir = scandir($cwd);
+            $dir = scandir(LinkList::$cwd);
     
             echo "<ol>";
             foreach($dir as $item){
