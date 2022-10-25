@@ -4,17 +4,18 @@
 
         echo "<ol>";
         foreach($dir as $item){
-            if(is_dir($item) && substr($item,0,1) != "."){
-                echo "Directory $item";
-            }
             $sub = explode(".",$item);
             if($sub[count($sub)-1] == "php"){
                 echo "<li>";
-                $uri = explode("/",$_SERVER["REQUEST_URI"]);
-                if($uri[count($uri)-1] == $item){
-                    echo $sub[0];
+                if(is_dir($item) && substr($item,0,1) != "."){
+                    createLinkList($item);
                 }else{
-                    echo "<a href='$item'>$sub[0]</a>";
+                    $uri = explode("/",$_SERVER["REQUEST_URI"]);
+                    if($uri[count($uri)-1] == $item){
+                        echo $sub[0];
+                    }else{
+                        echo "<a href='$item'>$sub[0]</a>";
+                    }
                 }
                 echo "</li>";
             }
