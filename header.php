@@ -5,7 +5,7 @@
         echo "<ol>";
         foreach($dir as $item){
             if(is_dir($item)){
-                createLinkList($item);
+                echo "Directory $item";
             }
             $sub = explode(".",$item);
             if($sub[count($sub)-1] == "php"){
