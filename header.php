@@ -4,7 +4,7 @@
         public static function createLinkList(){
              if(LinkList::$cwd == null){
                 $path = explode("/",getcwd());
-                LinkList::$cwd = "/" + $path[count($path)-1];   
+                LinkList::$cwd = "/" . $path[count($path)-1] . "/";   
             }
             echo LinkList::$cwd;
             LinkList::getLinks(LinkList::$cwd);
