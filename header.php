@@ -24,5 +24,5 @@
         echo "</ol>";
     }
     createLinkList(".");
-    
+    echo getcwd();
 ?>
