@@ -3,7 +3,11 @@
         public static $cwd = null;
         public static function createLinkList(){
              if(LinkList::$cwd == null){
-                LinkList::$cwd = $_SERVER["request_uri"];
+                LinkList::$cwd = getcwd();
+                $uri = $_SERVER["REQUEST_URI"];
+                while(LinkList::$cwd != $uri){
+                    LinkList::$cwd = substr(LinkList::$cwd,1);
+                }
             }
             LinkList::getLinks(LinkList::$cwd);
         }
@@ -36,5 +40,5 @@
     }
    
     LinkList::createLinkList();
-    var_dump($_SERVER)    
+    var_dump($_Ser)    
 ?>
