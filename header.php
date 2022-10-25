@@ -41,5 +41,5 @@
     }
    
     LinkList::createLinkList();
-    var_dump($_Ser)    
+    var_dump($_SERVER)    
 ?>
