@@ -9,7 +9,7 @@
                 echo "<li>";
                 $path = explode("/",$_SERVER["REQUEST_URI"];
                 if($path[count($path)-1] == $item){
-                    echo $sub
+                    echo $sub;
                 }else{
                     echo "<a href='$item'>$sub[0]</a>";
                 }
