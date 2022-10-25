@@ -5,10 +5,10 @@
              if(LinkList::$cwd == null){
                 LinkList::$cwd = getcwd();
             }
-            this->getLinks(LinkList::$cwd);
+            LinkList::getLinks(LinkList::$cwd);
         }
 
-        private function getLinks($path){
+        private static function getLinks($path){
             $dir = scandir($path);
     
             echo "<ol>";
@@ -17,7 +17,7 @@
                 if(is_dir($item) && substr($item,0,1) != "."){
                     echo "<li>";
                     echo $item;
-                    this->getLinks($item);
+                    LinkList::getLinks($item);
                     echo "</li>";
                 }else if($sub[count($sub)-1] == "php"){
                     echo "<li>";
