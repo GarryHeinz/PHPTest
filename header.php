@@ -9,7 +9,7 @@
                 LinkList::$cwd = "/" . explode("/",$_SERVER["PHP_SELF"])[1]; 
             }
             echo LinkList::$cwd;
-            LinkList::getLinks(".");
+            LinkList::getLinks(LinkList::$cwd);
         }
 
         private static function getLinks($path){
