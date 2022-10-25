@@ -21,6 +21,6 @@
         }
         echo "</ol>";
     }
-    createLinkList();
+    createLinkList(".");
     
 ?>
