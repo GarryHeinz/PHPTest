@@ -1,26 +1,10 @@
 <?php
     class LinkList{
-        public static $cwd = null;
 
-        public static function createLinkList(){
-             if(LinkList::$cwd == null){
-                $p = explode("/",$_SERVER["PHP_SELF"]);
-                //LinkList::$cwd = "/" . $path[count($path)-1] . "/";
-                if(!isset($p[1])){
-                    $p[1] = ".";
-                }
-                $current = $p[1];
-                LinkList::$cwd = "/" . $current; 
-            }
-            echo LinkList::$cwd;
-            LinkList::getLinks(LinkList::$cwd);
-        }
-
-        private static function getLinks($path){
-            $dir = scandir($path);
-    
+        public static function createLinkList($path){
             echo "<ol>";
-            foreach($dir as $item){
+            
+            foreach(scandir($path) as $item){
                 $sub = explode(".",$item);
                 if(is_dir($item) && substr($item,0,1) != "."){
                     echo "<li>";
@@ -41,7 +25,5 @@
             echo "</ol>";
         }
 
-    }
-   
-    LinkList::createLinkList();    
+    }     
 ?>

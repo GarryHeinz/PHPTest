@@ -1,5 +1,6 @@
 <?php
    include '../header.php';
+   LinkList::createLinkList("..");
    class MyFirstClass{
 
         var $isOpen = false;
