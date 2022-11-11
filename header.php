@@ -3,7 +3,6 @@
 
         public static function createLinkList($path){
             echo "<ol>";
-            
             foreach(scandir($path) as $item){
                 $sub = explode(".",$item);
                 if(is_dir($item) && substr($item,0,1) != "."){
